@@ -1,3 +1,13 @@
+[package]
+name = "sigmaos-workspace"
+version = "0.1.0"
+edition = "2021"
+description = "SigmaOS core workspace manifest and component metadata"
+license = "MIT"
+
+[dependencies]
+sigmaos_initramfs = { path = "crates/initramfs" }
+
 [workspace]
 resolver = "2"
 # Core SigmaOS component crates — canonical members of the OS workspace.

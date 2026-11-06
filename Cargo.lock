@@ -512,6 +512,13 @@ name = "sigmaos-sys"
 version = "0.1.0"
 
 [[package]]
+name = "sigmaos-workspace"
+version = "0.1.0"
+dependencies = [
+ "sigmaos_initramfs",
+]
+
+[[package]]
 name = "sigmaos_boot_manager"
 version = "0.1.0"
 

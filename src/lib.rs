@@ -76,7 +76,7 @@ mod tests {
 
     #[test]
     fn members_exist_on_disk() {
-        let home = Path::new(env!("CARGO_MANIFEST_DIR")).parent().unwrap().parent().unwrap();
+        let home = Path::new(env!("CARGO_MANIFEST_DIR")).parent().unwrap();
         for m in CORE_MEMBERS {
             assert!(home.join(m).join("Cargo.toml").exists(), "missing {m}");
         }
