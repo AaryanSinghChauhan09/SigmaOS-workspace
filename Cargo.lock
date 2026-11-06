@@ -490,6 +490,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "sigmaos-allocators"
+version = "0.1.0"
+dependencies = [
+ "sigmaos_kernel",
+]
+
+[[package]]
+name = "sigmaos-interrupt"
+version = "0.1.0"
+dependencies = [
+ "sigmaos_kernel",
+]
+
+[[package]]
 name = "sigmaos-posix"
 version = "0.1.0"
 

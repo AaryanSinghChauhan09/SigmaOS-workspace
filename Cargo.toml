@@ -4,7 +4,7 @@ resolver = "2"
 # crates/* are symlinks to the independent component repositories
 # (one repository per component), unified here for coherent builds.
 members = [
-    "crates/kernel",
+    "crates/SigmaOS-kernel",
     "crates/vfs",
     "crates/scheduler",
     "crates/driver_framework",
@@ -15,7 +15,6 @@ members = [
     "crates/coreutils",
     "crates/boot_manager",
     "crates/memory_manager",
+    "crates/interrupt",
+    "crates/allocators",
 ]
-# crates/interrupt and crates/allocators are excluded: their manifests
-# declare sibling path deps (../SigmaOS-kernel) that cannot resolve
-# through the crates/ symlinks. They remain buildable standalone.
