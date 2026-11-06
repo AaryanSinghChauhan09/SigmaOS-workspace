@@ -12,9 +12,9 @@ Kernel layer: `kernel`, `vfs`, `scheduler`, `driver_framework`
 System layer: `init`, `boot_manager`, `posix`, `sys`, `memory_manager`
 Userland layer: `coreutils`, `initramfs`
 
-`crates/interrupt` and `crates/allocators` are excluded: their manifests
-declare sibling path deps that cannot resolve through symlinks; they
-remain buildable standalone.
+All 13 core members build together. `crates/SigmaOS-kernel` is an extra
+symlink so the `../SigmaOS-kernel` path deps inside `interrupt` and
+`allocators` resolve through the `crates/` indirection.
 
 ## Usage
 
