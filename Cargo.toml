@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+# Core SigmaOS component crates — canonical members of the OS workspace.
+# crates/* are symlinks to the independent component repositories
+# (one repository per component), unified here for coherent builds.
+members = [
+    "crates/kernel",
+    "crates/vfs",
+    "crates/scheduler",
+    "crates/driver_framework",
+    "crates/init",
+    "crates/posix",
+    "crates/sys",
+    "crates/initramfs",
+    "crates/coreutils",
+    "crates/boot_manager",
+    "crates/memory_manager",
+]
+# crates/interrupt and crates/allocators are excluded: their manifests
+# declare sibling path deps (../SigmaOS-kernel) that cannot resolve
+# through the crates/ symlinks. They remain buildable standalone.
