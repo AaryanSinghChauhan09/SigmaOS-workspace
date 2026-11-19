@@ -1,3 +1,4 @@
+#![forbid(unsafe_code)]
 //! SigmaOS-workspace — Cargo workspace consolidation for core components.
 //!
 //! The workspace `Cargo.toml` at the repo root unifies independently
@@ -86,5 +87,27 @@ mod tests {
     fn layers_cover_all_members() {
         let total: usize = members_by_layer().iter().map(|(_, v)| v.len()).sum();
         assert_eq!(total, CORE_MEMBERS.len());
+    }
+}
+
+
+#[cfg(test)]
+mod workspace_extra_tests {
+    use super::*;
+
+    #[test]
+    fn test_unknown_member_layer_returns_none_aaa() {
+        // Arrange & Act
+        let layer = layer_of("non-existent-component");
+        // Assert
+        assert_eq!(layer, None);
+    }
+
+    #[test]
+    fn test_members_by_layer_categories_aaa() {
+        // Arrange & Act
+        let grouped = members_by_layer();
+        // Assert
+        assert_eq!(grouped.len(), 3); // Kernel, System, Userland
     }
 }
