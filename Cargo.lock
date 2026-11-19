@@ -191,6 +191,10 @@ name = "sigmaos_boot_manager"
 version = "0.1.0"
 
 [[package]]
+name = "sigmaos_drivers"
+version = "0.1.0"
+
+[[package]]
 name = "sigmaos_init"
 version = "0.1.0"
 
